@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar  class="new-background-color">
+  <ion-title>Связь с диспечером</ion-title>
+  <ion-buttons slot="start">
+    <ion-back-button  defaultHref="dashboard"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Сообщение</ion-label>
+    <ion-textarea rows="5" cols="10" placeholder="Ввведите текст сообщения..."></ion-textarea>
+  </ion-item>
+  <ion-button style="margin-top: 10px;" type="submit" expand="block" (click)="send()">Отправить</ion-button> 
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-title class="title">Заявка на услуги ОДН</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="dashboard"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="loginForm">
+        <ion-list>
+            <ion-item>
+                <ion-label position="stacked">Выбрать услугу</ion-label>
+                <ion-select multiple="false" cancelText="Отмена" okText="Выбрать" formControlName="uslugi_id">
+                    <ion-select-option [value]="item" *ngFor="let item of ulugii ">
+                        {{item.usluginame}}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Выберите дату</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY HH:mm" cancelText="Отмена" doneText="Выбрать" formControlName="data_vyp"></ion-datetime>
+            </ion-item>
+        </ion-list>
+    </form>
+    <ion-button style="margin-top: 10px;" type="submit" expand="block" (click)="save()">Заказать</ion-button>
+</ion-content>

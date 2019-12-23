@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-title>Заявка эконом услуги</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="dashboard"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="loginForm">
+        <ion-list>
+            <div *ngIf="!selectedServices.length" class="zayvka">
+                Выберите услуги для завершения заказа
+            </div>
+            <ion-list *ngIf="selectedServices.length">
+                <ion-item-sliding *ngFor="let item of selectedServices;let i = index" class="list-item">
+                    <ion-item>
+                        {{item.name}}({{item.count}}): {{item.price * item.count}} р.
+                    </ion-item>
+                    <ion-item-options side="end">
+                        <ion-item-option (click)="delete(i)">Удалить</ion-item-option>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+            <p *ngIf="selectedServices.length" style="font-size:12px; margin: 15px;">Чтобы удалить услугу потяните справа на лево</p>
+
+
+            <ion-button style="margin-top: 10px;" type="submit" expand="block" color="danger" (click)="selectCategory()">Выбрать услугу</ion-button>
+            <ion-item>
+                <ion-label position="stacked">Выберите дату и время</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY HH:mm" cancelText="Отмена" doneText="Выбрать" formControlName="data_vyp"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Выберите способ оплаты</ion-label>
+                <ion-segment formControlName="payment">
+                    <ion-segment-button value="1">
+                        <ion-label>Наличкой</ion-label>
+                    </ion-segment-button>
+                    <ion-segment-button disabled value="2">
+                        <ion-label>Картой</ion-label>
+                    </ion-segment-button>
+                </ion-segment>
+            </ion-item>
+            <ion-item>
+                <p>Итого: {{total}} руб</p>
+            </ion-item>
+        </ion-list>
+    </form>
+    <ion-button style="margin-top: 10px;" type="submit" expand="block" (click)="send()">Заказать</ion-button>
+</ion-content>

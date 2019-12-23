@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-row>
+            <ion-icon name="arrow-back" (click)="dismissLogin()"></ion-icon>
+            <ion-title class="title">ЁЖЭК</ion-title>
+        </ion-row>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    <form #form="ngForm" (ngSubmit)="login(form)" method="POST">
+        <ion-item>
+
+            <ion-input [(ngModel)]="phone" placeholder="Ваш логин (89001231122)" type="number" name="phone" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input [(ngModel)]="password" placeholder="Пароль" type="password" name="password" required></ion-input>
+        </ion-item>
+
+
+        <p class="ion-text-center">Забыли пароль?</p>
+
+        <ion-button class="auth" type="submit" expand="block">Вход</ion-button>
+    </form>
+    <p class="ion-text-center">Еще нет аккаунта?</p>
+    <ion-button class="register" type="submit" expand="block" (click)="registerModal()">Регистрация</ion-button>
+</ion-content>

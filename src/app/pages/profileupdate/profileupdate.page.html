@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-title class="title">Редактировать профиль</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="profile"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <form [formGroup]="loginForm">
+        <ion-list>
+            <ion-item>
+                <ion-input formControlName="lastname" placeholder="Фамилия" type="text" name="lastname"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input formControlName="username" placeholder="Имя" type="text" name="username"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input formControlName="patronymic" placeholder="Отчество" type="text" name="patronymic"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input formControlName="phone" type="number" placeholder="Телефон" name="phone"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input formControlName="email" type="text" placeholder="Ваш E-mail" name="email"></ion-input>
+            </ion-item>
+            <ngx-dadata formControlName="adress_fakt" [config]="config" (selected)="onAddressSelected($event)"></ngx-dadata>
+            <ion-item>
+                <ion-input formControlName="numberhouse" type="number" placeholder="№ дома" name="numberhouse"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input formControlName="kv" type="number" placeholder="№ номер квартиры" name="kv"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input formControlName="uk" type="text" placeholder="Выбирете управляющию компанию" name="uk"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input formControlName="password" type="password" placeholder="******" name="password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Получать SMS уведомления</ion-label>
+                <ion-checkbox slot="start" formControlName="smspodpiska" name="smspodpiska" value="smspodpiska"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                <ion-label>Получать E-mail уведомления</ion-label>
+                <ion-checkbox slot="start" formControlName="epodpiska" name="epodpiska"></ion-checkbox>
+            </ion-item>
+        </ion-list>
+    </form>
+    <ion-button class="register" type="submit" expand="block" (click)="save()">Сохранить</ion-button>
+</ion-content>

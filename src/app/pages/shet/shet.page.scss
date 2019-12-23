@@ -1,0 +1,20 @@
+.new-background-color {
+    --background: #e57217;
+    --color: #fff;
+}
+
+.title {
+    font-size: 22px;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper {
+    position: relative;
+}
+
+.box {
+    position: absolute;
+    top: 18%;
+    margin: -50px 0px 0 18px;
+    width: 90%;
+}

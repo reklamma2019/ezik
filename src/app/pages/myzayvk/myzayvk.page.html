@@ -1,0 +1,98 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-title>Моя заявки</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="dashboard"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Потяните для обновления" refreshingSpinner="circles" refreshingText="Обновление...">
+        </ion-refresher-content>
+    </ion-refresher>
+    <ion-segment [(ngModel)]="myzayvki" color="primary">
+        <ion-segment-button value="official">
+            Текущие
+        </ion-segment-button>
+        <ion-segment-button value="personal">
+            Завершенные
+        </ion-segment-button>
+    </ion-segment>
+    <p class="refrech">Обновить статус заявки.Потяните экран вниз</p>
+    <div [ngSwitch]="myzayvki">
+        <ion-list *ngSwitchCase="'personal'" padding>
+            <table style="min-width: 100%;">
+                <thead style="color:#333; text-align: center; font-size: 12px;">
+                    <tr style="height: 30px;">
+                        <th style="width: 15%; border: 1px solid #e57217">№</th>
+                        <th style="width: 20%; border: 1px solid #e57217">Статус</th>
+                        <th style="border: 1px solid #e57217">Мастер</th>
+                        <th style="width: 40%; border: 1px solid #e57217">Дата выполенния</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="font-size:12px;">
+                        <td>
+                            <div style="border: 1px solid #e57217;padding: 5px; min-height: 48px;" *ngFor="let item of allMyzayvk ">
+                                {{item.id}}
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border: 1px solid #e57217;padding: 5px; min-height: 48px;" *ngFor="let item of allMyzayvk ">
+                                {{item.status}}
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border: 1px solid #e57217;padding: 5px; min-height: 48px;" *ngFor="let item of allMyzayvk ">
+                                {{item.master}}
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border: 1px solid #e57217;padding: 5px; min-height: 48px;" *ngFor="let item of allMyzayvk ">
+                                {{item.updated_at}}
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'official'" padding>
+            <table style="min-width: 100%;">
+                <thead style="color:#333; text-align: center; font-size: 12px;">
+                    <tr style="height: 30px;">
+                        <th style="width: 15%; border: 1px solid #e57217">№</th>
+                        <th style="width: 20%; border: 1px solid #e57217">Статус</th>
+                        <th style="border: 1px solid #e57217">Мастер</th>
+                        <th style="width: 40%; border: 1px solid #e57217">Дата заявки</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="font-size:12px;">
+                        <td>
+                            <div style="border: 1px solid #e57217;padding: 5px; min-height: 48px;" *ngFor="let item of allMyzayvknew ">
+                                {{item.id}}
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border: 1px solid #e57217;padding: 5px; min-height: 48px;" *ngFor="let item of allMyzayvknew ">
+                                {{item.status}}
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border: 1px solid #e57217;padding: 5px; min-height: 48px;" *ngFor="let item of allMyzayvknew ">
+                                {{item.master}}
+                            </div>
+                        </td>
+                        <td>
+                            <div style="border: 1px solid #e57217;padding: 5px; min-height: 48px;" *ngFor="let item of allMyzayvknew ">
+                                {{item.create_at}}
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ion-list>
+    </div>
+</ion-content>

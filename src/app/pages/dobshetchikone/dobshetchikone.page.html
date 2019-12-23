@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar  class="new-background-color">
+    <ion-title>Горячая вода № 1</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button  defaultHref="shet"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+          <ion-item>
+              <ion-label position="floating">Серийный № счетчика</ion-label>
+              <ion-input ngModel name="fName"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label position="floating">Дата установки</ion-label>
+            <ion-input ngModel name="lName"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label position="floating">Дата поверки последней</ion-label>
+              <ion-input type="email" ngModel name="email"></ion-input>
+            </ion-item>
+          <ion-button type="submit" expand="block" color="danger">Сохранить</ion-button>
+          <ion-button style="margin-top: 10px;"type="submit" expand="block" color="danger" routerLink="/shet" routerDirection="forward">Добавить счетчик</ion-button>
+        <div class="helpshet">
+            <ion-card-subtitle>На данной странице Вы можете добавить свой счетчик горячей воды.
+              Заполните все необходимые поля ниже. Это позволит Вам передовать свои показание счетчиков и получать 
+              дополнительные скидки при обслуживание счетчиков.</ion-card-subtitle></div>
+</ion-content>

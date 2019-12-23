@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar  class="new-background-color">
+  <ion-title>Экстренные службы</ion-title>
+  <ion-buttons slot="start">
+    <ion-back-button  defaultHref="dashboard"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+<ion-content>
+<div class="dop" >
+<ion-row>
+    <div *ngFor="let item of slyzby " style="width: 48%; margin-right: 5px;">
+  <span style="display: inline-block;width: 100%; height:auto; border: 2px solid #e57217; border-radius: 10px; margin:0px 5px 5px 5px; padding:0px 15px 0px 15px">
+    <a id="cart-button1" block   href="{{item.phone}}" routerDirection="forward">
+        <img src="" style="display:block;height:auto; padding: 5px 0px 0px 0px" />
+      <p style="width:100%; color:#493632; text-align:center">  {{item.descprition}} </p>
+    </a>
+  </span> 
+</div>
+</ion-row>
+</div>
+</ion-content>

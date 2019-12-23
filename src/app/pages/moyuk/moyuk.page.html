@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-title class="title">Моя управляющая</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="dashboard"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <div class="moyuk">
+        <ion-list>
+            <div *ngIf="user != undefined" class="users">
+                <p class="description">Управляющая организация: {{user.uk.username}} </p>
+            </div>
+            <div *ngIf="user != undefined" class="users">
+                <p class="description">Телефон диспечерской: {{user.uk.phone_dispech}}</p>
+            </div>
+            <div *ngIf="user != undefined" class="users">
+                <p class="description">Адрес офиса: {{user.uk.adress_fakt}}</p>
+            </div>
+            <div *ngIf="user != undefined" class="users">
+                <p class="description">Адрес юридический: {{user.uk.adress_yr}}</p>
+            </div>
+            <div *ngIf="user != undefined" class="users">
+                <p class="description">Телефон: {{user.uk.phone}}</p>
+            </div>
+            <div *ngIf="user != undefined" class="users">
+                <p class="description">E-mail: {{user.uk.email}}</p>
+            </div>
+            <div *ngIf="user != undefined" class="users">
+                <p class="description">Руководитель: {{user.uk.boss}}</p>
+            </div>
+            <div *ngIf="user != undefined" class="users">
+                <p class="description">ИНН: {{user.uk.inn}}</p>
+            </div>
+            <div *ngIf="user != undefined" class="users">
+                <p class="description">ОГРН: {{user.uk.ogrn}}</p>
+            </div>
+        </ion-list>
+    </div>
+    <ion-button class="register" type="submit" expand="block" routerLink="/odn" routerDirection="forward">Заявка на услуги ОДН</ion-button>
+</ion-content>

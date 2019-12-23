@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-title class="title">Наши партнеры</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="dashboard"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <div class="partner">
+        <ion-row>
+            <div *ngFor="let item of partn " style="width: 48%; margin-right: 5px;">
+                <span style="display: inline-block;width: 100%; height:auto; margin:0px 5px 5px 5px; padding:0px 15px 0px 15px">
+        <a id="cart-button1" block   routerLink="{{item.alias}}" routerDirection="forward">
+            <img src="http://admin.е-жэк.рф/uprav/uploads/images/dop/{{item.image}}" style="display:block;height:auto; padding: 5px 0px 0px 0px" />
+          <p style="width:100%; color:#493632; text-align:center">  {{item.partnername}} </p>
+        </a>
+      </span>
+            </div>
+        </ion-row>
+    </div>
+</ion-content>

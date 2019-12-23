@@ -1,0 +1,33 @@
+.new-background-color {
+    --background: #e57217;
+    --color: #fff;
+}
+
+.title {
+    text-align: center;
+    font-size: 22px;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.5);
+    margin-right: 10%;
+}
+
+ion-icon {
+    width: 25px;
+    height: 25px;
+    padding-left: 5px;
+}
+
+.item-interactive.ion-valid {
+    --highlight-background: #493632;
+}
+
+ion-label {
+    color: #493632
+}
+
+.auth {
+    --background: #e57217;
+}
+
+.register {
+    --background: #493632;
+}

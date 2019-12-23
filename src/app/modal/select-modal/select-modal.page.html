@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-title class="has-only-button-right">
+            {{title}}
+        </ion-title>
+        <ion-buttons slot="end">
+            <ion-button fill="clear" (click)="closeModal()">
+                <ion-icon name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list class="categories-list">
+        <ion-item *ngFor="let item of items" class="category-block" (click)="select(item)">
+            <p style="width: 100%"> {{item.name}} </p> <p *ngIf="item.price" style="width: 22%;"> - {{item.price}}р.</p>
+        </ion-item>
+    </ion-list>
+</ion-content>

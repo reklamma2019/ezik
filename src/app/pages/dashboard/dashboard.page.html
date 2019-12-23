@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-title class="title">ЁЖЭК</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button style="color:#fff;" autoHide="false"></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list id="cart-list3">
+        <div *ngIf="user != undefined" class="users">
+            Добро пожаловать {{user ["username"]}} {{user ["patronymic"]}}
+        </div>
+        <div *ngIf="user != undefined" class="phonesos">
+            Аварийная служба {{user.uk.phone}}
+        </div>
+    </ion-list>
+    <ion-row>
+        <span style="display: inline-block;width: 48%; height:auto; border: 2px solid #e57217; border-radius: 10px; margin:0px 5px 5px 5px; padding:0px 15px 0px 15px">
+      <a id="cart-button1" block   routerLink="/zayvka" routerDirection="forward">
+          <img src="assets/img/5.png" style="display:block;height:auto; padding: 5px 0px 0px 20px" />
+        <p style="width:100%; color:#493632; text-align:center"> Заявка на <br>услуги эконом </p>
+      </a>
+    </span>
+        <span style="display: inline-block;width: 48%; height:auto; border: 2px solid #e57217; border-radius: 10px; margin:0px 0px 5px 0px; padding:0px 15px 0px 15px">
+              <a id="cart-button2" block style="color:#e57217;"  routerLink="/zayvkaikonom" routerDirection="forward">
+                  <img src="assets/img/6.png" style="display:block;height:auto; padding: 5px 0px 0px 20px" />
+               <p style="width:100%; color:#493632; text-align:center"> Заявка на <br>услуги </p>
+              </a>
+    </span>
+        <span style="display: inline-block;width: 48%; height:auto; border: 2px solid #e57217; border-radius: 10px; margin:0px 5px 5px 5px; padding:0px 15px 0px 15px">
+        <a id="cart-button1" block  routerLink="/moyuk" routerDirection="forward">
+            <img src="assets/img/4.png" style="display:block;height:auto; padding: 5px 0px 0px 20px" />
+          <p style="width:100%; color:#493632; text-align:center"> Моя <br> управляющая </p>
+        </a>
+      </span>
+        <span style="display: inline-block;width: 48%; height:auto; border: 2px solid #e57217; border-radius: 10px; margin:0px 0px 5px 0px; padding:0px 15px 0px 15px">
+                <a id="cart-button2" block style="color:#e57217;"  routerLink="/chatdispecher" routerDirection="forward">
+                    <img src="assets/img/3.png" style="display:block;height:auto; padding: 5px 0px 0px 20px" />
+                 <p style="width:100%; color:#493632; text-align:center"> Написать <br> диспечеру </p>
+                </a>
+      </span>
+        <span style="display: inline-block;width: 48%; height:auto; border: 2px solid #e57217; border-radius: 10px; margin:0px 5px 5px 5px; padding:0px 15px 0px 15px">
+          <a id="cart-button1" block   routerLink="/zayvkadop" routerDirection="forward">
+              <img src="assets/img/8.png" style="display:block;height:auto; padding: 5px 0px 0px 20px" />
+            <p style="width:100%; color:#493632; text-align:center"> Доп. услуги </p>
+          </a>
+        </span>
+        <span style="display: inline-block;width: 48%; height:auto; border: 2px solid #e57217; border-radius: 10px; margin:0px 0px 5px 0px; padding:0px 15px 0px 15px">
+                  <a id="cart-button2" block style="color:#e57217;"  routerLink="/partner" routerDirection="forward">
+                      <img src="assets/img/7.png" style="display:block;height:auto; padding: 5px 0px 0px 20px" />
+                   <p style="width:100%; color:#493632; text-align:center"> Партнеры </p>
+                  </a>
+        </span>
+    </ion-row>
+</ion-content>

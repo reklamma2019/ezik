@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar  class="new-background-color">
+  <ion-title>Прайс услуги эконом</ion-title>
+  <ion-buttons slot="start">
+    <ion-back-button  defaultHref="dashboard"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+  <ion-content padding="true">
+    <table style="min-width: 100%;">
+      <thead style="color:#fff; text-align: center">
+      <tr style="height: 30px; background:#493632">
+        <th style="width: 40%; border: 1px solid #e57217">Услуги эконом</th>
+        <th style="width: 30%; border: 1px solid #e57217">Стоимость</th>
+        <th style="border: 1px solid #e57217">Мин.час</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+            <div style="border: 1px solid #e57217;padding: 5px;" *ngFor="let item of ulugii ">
+                {{item.usluginame}}
+        </div>
+        </td>
+        <td>
+            <div style="border: 1px solid #e57217;padding: 5px; text-align: center" *ngFor="let item of ulugii ">
+                {{item.price_ikon}}
+        </div>
+        </td>
+        <td>
+          <div style="border: 1px solid #e57217;padding: 5px; text-align: center" *ngFor="let item of ulugii ">
+              {{item.norma_chas}}
+      </div>
+      </td>
+      </tr>
+      </tbody>
+    </table>
+  
+         </ion-content>

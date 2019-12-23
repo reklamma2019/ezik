@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-title class="title">ЁЖЭК</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card class="welcome-card" style="top: 10%;">
+        <img src="/assets/Logo.png">
+        <ion-card-content>
+            <p style="text-align: center; color:#493632">Ваш не заменимый помощник</p>
+        </ion-card-content>
+    </ion-card>
+    <ion-card style="top: 20%;">
+        <ion-row>
+            <ion-col>
+                <ion-button class="auth" type="submit" expand="block" (click)="login()">Вход</ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button class="register" type="submit" expand="block" (click)="register()">Регистрация</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+</ion-content>
+<ion-footer>
+</ion-footer>

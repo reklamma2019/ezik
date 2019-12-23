@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-title class="title">Интсрукция</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="dashboard"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="help">
+        <ion-list>
+            <div *ngFor="let item of help " [innerHTML]="item.help"></div>
+        </ion-list>
+    </div>
+</ion-content>

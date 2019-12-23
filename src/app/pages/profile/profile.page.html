@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-title class="title">Мой профиль</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="dashboard"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <div class="profile">
+        <ion-list>
+            <div *ngIf="user != undefined">
+                <p class="description">Фамилия: {{user ["lastname"]}}
+                </p>
+            </div>
+            <div *ngIf="user != undefined">
+                <p class="description">Имя: {{user ["username"]}}</p>
+            </div>
+            <div *ngIf="user != undefined">
+                <p class="description">Отчество: {{user ["patronymic"]}}</p>
+            </div>
+            <div *ngIf="user != undefined">
+                <p class="description">Телефон: {{user ["phone"]}}</p>
+            </div>
+            <div *ngIf="user != undefined">
+                <p class="description">Адрес: {{user ["adress_fakt"]}}</p>
+            </div>
+            <div *ngIf="user != undefined">
+                <p class="description">№ дома: {{user ["numberhouse"]}}</p>
+            </div>
+            <div *ngIf="user != undefined">
+                <p class="description">№ квартиры: {{user ["kv"]}}</p>
+            </div>
+            <div *ngIf="user != undefined">
+                <p class="description">Управляющая организация:<br> {{user.uk.username}}
+                </p>
+            </div>
+            <div *ngIf="user != undefined">
+                <p class="description">E-mail: {{user ["email"]}}</p>
+            </div>
+            <div *ngIf="user != undefined">
+                <p class="description">Телефон диспечера: {{user ["phone_dispech"]}}</p>
+            </div>
+        </ion-list>
+    </div>
+    <ion-button class="register" type="submit" expand="block" routerLink="/profileupdate" routerDirection="forward">Редактировать профиль</ion-button>
+    <ion-button class="register" type="submit" expand="block" routerLink="/shetmy" routerDirection="forward">Мои счетчики</ion-button>
+</ion-content>
