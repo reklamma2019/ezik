@@ -1,0 +1,7 @@
+{
+  "name": "Yizik",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
