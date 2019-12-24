@@ -28,6 +28,10 @@ export class ZayvkaPage {
 	total: any;
 	
 	fieldsName: Array<string> = ['uslugi_id', 'hours', 'data_vyp', 'date', 'payment', 'price_ikon'];
+	payment: any;
+	segmentChanged(event) {
+		this.payment = event;
+	  }
 
 	ulugii: Array<any> = [];
 	constructor (
@@ -36,7 +40,9 @@ export class ZayvkaPage {
 		public toastNotify: ToastNotify,
 		public modalCtrl: ModalController,
 		public formBuilder: FormBuilder,
+
 	) {
+		this.payment = "1";
 		let self = this;
 		self.total = self.baseTotal;
 		self.loginForm = formBuilder.group({
@@ -45,7 +51,7 @@ export class ZayvkaPage {
             hours: ["0"],
             data_vyp: [moment().format('DD/MM/YYYY HH:mm')],
             //date: [moment().toISOString()],
-            payment: ["0"]
+            payment: ["1"],
         });
 	}
 	ionViewDidEnter(){

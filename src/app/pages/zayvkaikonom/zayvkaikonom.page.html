@@ -12,16 +12,16 @@
     <form [formGroup]="loginForm">
         <ion-list>
             <ion-item>
-                <ion-label position="stacked">Выбрать специалиста</ion-label>
-                <ion-select multiple="false" cancelText="Отмена" okText="Выбрать" formControlName="uslugi_id" (ionChange)="calculate()">
+                <ion-label position="stacked"></ion-label>
+                <ion-select multiple="false" placeholder="Выбрать специалиста" cancelText="Отмена" okText="Выбрать" formControlName="uslugi_id" (ionChange)="calculate()">
                     <ion-select-option [value]="item" *ngFor="let item of ulugii ">
                         {{item.usluginame}}
                     </ion-select-option>
                 </ion-select>
             </ion-item>
             <ion-item>
-                <ion-label position="stacked">Введите количество часов</ion-label>
-                <ion-select multiple="false" cancelText="Отмена" okText="Выбрать" formControlName="hours" (ionChange)="calculate()">
+                <ion-label position="stacked"></ion-label>
+                <ion-select placeholder="Выбрать количество часов" multiple="false" cancelText="Отмена" okText="Выбрать" formControlName="hours" (ionChange)="calculate()">
                     <ion-select-option value="0">Выберите значение</ion-select-option>
                     <ion-select-option value="2">2 часа</ion-select-option>
                     <ion-select-option value="4">4 часа</ion-select-option>
@@ -31,8 +31,8 @@
                 </ion-select>
             </ion-item>
             <ion-item>
-                <ion-label position="stacked">Выберите дату</ion-label>
-                <ion-datetime displayFormat="DD/MM/YYYY HH:mm" cancelText="Отмена" doneText="Выбрать" formControlName="data_vyp"></ion-datetime>
+                <ion-label position="stacked"></ion-label>
+                <ion-datetime placeholder="Выбрать дату выполнения" displayFormat="DD/MM/YYYY HH:mm" cancelText="Отмена" doneText="Выбрать" formControlName="data_vyp"></ion-datetime>
             </ion-item>
             <ion-item>
                 <ion-label position="stacked">Выберите способ оплаты</ion-label>
@@ -46,10 +46,10 @@
                 </ion-segment>
             </ion-item>
             <ion-item *ngIf="loginForm.controls.uslugi_id.value.id != 0">
-                <ion-label>Стоимость услуги: {{loginForm.controls.uslugi_id.value.price_ikon}} руб</ion-label>
+                <ion-label>Стоимость услуги/час: {{loginForm.controls.uslugi_id.value.price_ikon}} руб</ion-label>
             </ion-item>
             <ion-item>
-                <ion-label>Стоимость итого: {{total}}</ion-label>
+                <ion-label>Итого к оплате: {{total}}</ion-label>
             </ion-item>
         </ion-list>
     </form>

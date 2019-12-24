@@ -3,7 +3,7 @@ import { ModalController, NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { AlertController } from '@ionic/angular';
-import { FormBuilder,FormGroup}	from '@angular/forms';
+import { FormBuilder,FormGroup, Validators, ReactiveFormsModule}	from '@angular/forms';
 import { ToastController } from '@ionic/angular';
 import { Api, ToastNotify } from 'src/app//providers/providers';
 import { DadataConfig, DadataType, DadataSuggestion, DadataAddress } from '@kolkov/ngx-dadata';
@@ -43,13 +43,14 @@ export class RegisterPage {
   ) {
 		let self = this;
 		self.loginForm = formBuilder.group({
-		phone: [],
-    username:[],
-    lastname: [],
-    kv: [],
-    numberhouse: [],
-    password: [],
-    adress_fakt: [],
+    phone: ['', Validators.required],
+    username:['', Validators.required],
+    lastname: ['', Validators.required],
+    kv: ['', Validators.required],
+    numberhouse: ['', Validators.required],
+    password: ['', Validators.required],
+    adress_fakt: ['', Validators.required],
+    agreement: ['', Validators.required]
         });
 	}
   ngOnInit() {
@@ -64,12 +65,6 @@ export class RegisterPage {
 			error: string = '',
 			values = self.loginForm.getRawValue();
 		console.log('values = ', values);
-		if(values.phone == 0 ) {
-			error+='Введите телефон. ';
-    }
-    if(values.password == 0 ) {
-			error+='Введите пароль. ';
-    }
 		if(!error.length) {
 			let params: any = {
 		username:  values.username,
@@ -130,6 +125,7 @@ export class RegisterPage {
         text: 'Потвердить',
         handler: (inputs) => {
           if(inputs.ops_number.length) {
+            this.navCtrl.navigateRoot('/landing');
           } else {
             // invalid login
             return false;

@@ -93,7 +93,10 @@ export class ProfileupdatePage {
 		lastname: values.lastname,
 		patronymic: values.patronymic,
         phone:  values.phone,
-        adress_fakt:  values.adress_fakt,
+		adress_fakt:  values.adress_fakt,
+		kv: values.kv,
+		email: values.email,
+		numberhouse: values.numberhouse,
 			};
 			console.log('todo send data ', params);
 			self.api.showMask()
@@ -118,8 +121,7 @@ export class ProfileupdatePage {
 					});
 				});
 			});
-			self.toastNotify.success('Ваш профиль изменен успешно.');
-			this.navCtrl.navigateRoot('/shet');
+			this.navCtrl.navigateRoot('/profilefinish');
 		} else {
 			self.showError(error);
 		}

@@ -11,16 +11,15 @@
     <form [formGroup]="loginForm">
         <ion-list>
             <ion-item>
-                <ion-label position="stacked">Выбрать услугу</ion-label>
-                <ion-select multiple="false" cancelText="Отмена" okText="Выбрать" formControlName="uslugi_id">
+                <ion-label position="stacked"></ion-label>
+                <ion-select placeholder="Выбирете услугу" multiple="false" cancelText="Отмена" okText="Выбрать" formControlName="uslugi_id">
                     <ion-select-option [value]="item" *ngFor="let item of ulugii ">
                         {{item.usluginame}}
                     </ion-select-option>
                 </ion-select>
             </ion-item>
             <ion-item>
-                <ion-label position="stacked">Выберите дату</ion-label>
-                <ion-datetime displayFormat="DD/MM/YYYY HH:mm" cancelText="Отмена" doneText="Выбрать" formControlName="data_vyp"></ion-datetime>
+                <ion-datetime placeholder="Выбирите дату выполнения" displayFormat="DD/MM/YYYY HH:mm" cancelText="Отмена" doneText="Выбрать" formControlName="data_vyp"></ion-datetime>
             </ion-item>
         </ion-list>
     </form>

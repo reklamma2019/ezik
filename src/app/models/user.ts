@@ -7,8 +7,8 @@ export class User {
     uk: any;
     patronymic: string;
     lastname: string;
-    kv: string;
-    numberhouse: string;
+    kv: number;
+    numberhouse: number;
     smspodpiska:string;
     password: string;
     epodpiska: string;

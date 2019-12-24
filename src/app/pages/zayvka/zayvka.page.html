@@ -26,10 +26,10 @@
             <p *ngIf="selectedServices.length" style="font-size:12px; margin: 15px;">Чтобы удалить услугу потяните справа на лево</p>
 
 
-            <ion-button style="margin-top: 10px;" type="submit" expand="block" color="danger" (click)="selectCategory()">Выбрать услугу</ion-button>
+            <ion-button class="register" type="submit" expand="block" (click)="selectCategory()">Выбрать услугу</ion-button>
             <ion-item>
-                <ion-label position="stacked">Выберите дату и время</ion-label>
-                <ion-datetime displayFormat="DD/MM/YYYY HH:mm" cancelText="Отмена" doneText="Выбрать" formControlName="data_vyp"></ion-datetime>
+                <ion-label position="stacked"></ion-label>
+                <ion-datetime placeholder="Выбрать дату выполнения" displayFormat="DD/MM/YYYY HH:mm" cancelText="Отмена" doneText="Выбрать" formControlName="data_vyp"></ion-datetime>
             </ion-item>
             <ion-item>
                 <ion-label position="stacked">Выберите способ оплаты</ion-label>
@@ -43,9 +43,9 @@
                 </ion-segment>
             </ion-item>
             <ion-item>
-                <p>Итого: {{total}} руб</p>
+                <p>Итого к оплате: {{total}} руб</p>
             </ion-item>
         </ion-list>
     </form>
-    <ion-button style="margin-top: 10px;" type="submit" expand="block" (click)="send()">Заказать</ion-button>
+    <ion-button class="register" type="submit" expand="block" (click)="send()">Заказать</ion-button>
 </ion-content>

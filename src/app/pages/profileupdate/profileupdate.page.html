@@ -36,6 +36,13 @@
                 <ion-input formControlName="uk" type="text" placeholder="Выбирете управляющию компанию" name="uk"></ion-input>
             </ion-item>
             <ion-item>
+                <ion-select multiple="false" cancelText="Отмена" okText="Выбрать" formControlName="uk">
+                    <ion-select-option value="1" *ngFor="let uk of uk">
+                        {{user.uk.username}}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
                 <ion-input formControlName="password" type="password" placeholder="******" name="password"></ion-input>
             </ion-item>
             <ion-item>

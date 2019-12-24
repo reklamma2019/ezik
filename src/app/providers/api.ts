@@ -221,6 +221,12 @@ export class Api {
     updateProfile(params: any){
         return this.doRequest('PUT', `updateuser`, params);
     }
+    getType(){
+        return this.doRequest('GET', `typeshet`, {});
+    }
+    sendShet(params: any){
+        return this.doRequest('POST', `addshet`, params);
+    }
     
        
     log(message: string, xhr: any, method: string, params?: any) {

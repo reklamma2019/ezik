@@ -36,7 +36,7 @@ export class ZayvkaikonomPage {
 			uslugi_id: [{
 				id: 0
 			}],
-			hours: ["0"],
+			hours: [""],
             data_vyp: [moment().format('DD/MM/YYYY HH:mm')],
            // date: [moment().toISOString()],
 		   payment: ["1"],
@@ -73,13 +73,9 @@ export class ZayvkaikonomPage {
 		if(values.hours == 0 ) {
 			error+='Выберите время. ';
 		}
-		if(values.payment == 0 ) {
-			error+='Выберите способ оплаты. ';
-		}
 		if(!error.length) {
 			let params: any = {
 				uslugi_id: values.uslugi_id.id,
-				/*hours: values.hours,*/
 				data_vyp: values.data_vyp,
 				oplata_id: values.payment,
 				hours: values.hours,

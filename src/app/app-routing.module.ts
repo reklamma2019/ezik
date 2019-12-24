@@ -40,6 +40,14 @@ const routes: Routes = [
   { path: 'dopulugimeny', loadChildren: './dopulugimeny/dopulugimeny.module#DopulugimenyPageModule',canActivate: [AuthGuard] },
   { path: 'odn', loadChildren: './pages/odn/odn.module#OdnPageModule',canActivate: [AuthGuard] },
   { path: 'myzayvk', loadChildren: './pages/myzayvk/myzayvk.module#MyzayvkPageModule',canActivate: [AuthGuard] },
+  {
+    path: 'profilefinish',
+    loadChildren: () => import('./profilefinish/profilefinish.module').then( m => m.ProfilefinishPageModule)
+  },
+  {
+    path: 'agreement',
+    loadChildren: () => import('./agreement/agreement.module').then( m => m.AgreementPageModule)
+  },
   
 ];
 @NgModule({

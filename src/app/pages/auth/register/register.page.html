@@ -10,25 +10,63 @@
     <form [formGroup]="loginForm">
         <ion-list>
             <ion-item>
-                <ion-input formControlName="phone" placeholder="89000000000" type="number" name="phone"></ion-input>
+                <ion-input formControlName="phone" placeholder="89000000000" type="number" name="phone"> </ion-input>
             </ion-item>
+            <div class="alert alert-danger" *ngIf="loginForm.controls['phone'].invalid && loginForm.controls['phone'].touched">
+                Вы не указали номер телефона
+            </div>
+            <div [hidden]="loginForm.controls['phone'].invalid || loginForm.controls['phone'].untouched" class="alert alert-danger">
+            </div>
             <ion-item>
                 <ion-input formControlName="lastname" placeholder="Фамилия" type="text" name="lastname"></ion-input>
             </ion-item>
+            <div class="alert alert-danger" *ngIf="loginForm.controls['lastname'].invalid && loginForm.controls['lastname'].touched">
+                Вы не указали свою фамилию
+            </div>
+            <div [hidden]="loginForm.controls['lastname'].invalid || loginForm.controls['lastname'].untouched" class="alert alert-danger">
+            </div>
             <ion-item>
                 <ion-input formControlName="username" placeholder="Имя" type="text" name="username"></ion-input>
             </ion-item>
+            <div class="alert alert-danger" *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
+                Вы не указали свое имя
+            </div>
+            <div [hidden]="loginForm.controls['username'].invalid || loginForm.controls['username'].untouched" class="alert alert-danger">
+            </div>
             <ngx-dadata formControlName="adress_fakt" [config]="config" (selected)="onAddressSelected($event)"></ngx-dadata>
+            <div class="alert alert-danger" *ngIf="loginForm.controls['adress_fakt'].invalid && loginForm.controls['adress_fakt'].touched">
+                Вы не указали свой адрес
+            </div>
+            <div [hidden]="loginForm.controls['adress_fakt'].invalid || loginForm.controls['adress_fakt'].untouched" class="alert alert-danger">
+            </div>
             <ion-item>
                 <ion-input formControlName="numberhouse" placeholder="№ дома" type="text" name="numberhouse"></ion-input>
             </ion-item>
+            <div class="alert alert-danger" *ngIf="loginForm.controls['numberhouse'].invalid && loginForm.controls['numberhouse'].touched">
+                Вы не указали свой адрес
+            </div>
+            <div [hidden]="loginForm.controls['numberhouse'].invalid || loginForm.controls['numberhouse'].untouched" class="alert alert-danger">
+            </div>
             <ion-item>
                 <ion-input formControlName="kv" placeholder="№ кваритры" type="text" name="kv"></ion-input>
             </ion-item>
+            <div class="alert alert-danger" *ngIf="loginForm.controls['kv'].invalid && loginForm.controls['kv'].touched">
+                Вы не указали свой адрес
+            </div>
+            <div [hidden]="loginForm.controls['kv'].invalid || loginForm.controls['kv'].untouched" class="alert alert-danger">
+            </div>
             <ion-item>
                 <ion-input formControlName="password" placeholder="Пароль (не менее 6 символов)" type="text" name="password"></ion-input>
             </ion-item>
+            <div class="alert alert-danger" *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+                Пароль не менее 6 символов
+            </div>
+            <div [hidden]="loginForm.controls['password'].invalid || loginForm.controls['password'].untouched" class="alert alert-danger">
+            </div>
+
+            <ion-checkbox style="margin-top: 10px;" slot="start" formControlName="agreement" name="agreement"></ion-checkbox>
+            <ion-label style="margin-left:5px;">я согласен с условиями соглашения</ion-label>
         </ion-list>
     </form>
-    <ion-button (click)="presentAlertMultipleButtons()" (click)="save()" class="register" type="submit" expand="block">Регистрация</ion-button>
+    <ion-button (click)="presentAlertMultipleButtons()" (click)="save()" [disabled]="loginForm.invalid" class="register" type="submit" expand="block">Регистрация</ion-button>
 </ion-content>

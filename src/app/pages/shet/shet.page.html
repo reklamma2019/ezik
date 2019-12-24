@@ -9,5 +9,26 @@
 
 
 <ion-content class="ion-padding">
-
+    <form [formGroup]="addshetForm">
+        <ion-list>
+            <ion-item>
+                <ion-label position="stacked"></ion-label>
+                <ion-select multiple="false" placeholder="Выбирите тип счетчика" cancelText="Отмена" okText="Выбрать" formControlName="typeshetchik_id">
+                    <ion-select-option [value]="item" *ngFor="let item of type ">
+                        {{item.typename}}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-input formControlName="number" placeholder="№ счетчика" type="text" name="number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-datetime displayFormat="DD/MM/YYYY" placeholder="Выберите дату установки" cancelText="Отмена" doneText="Выбрать" formControlName="data_instal"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-datetime displayFormat="DD/MM/YYYY" placeholder="Выберите дату последний поверки" cancelText="Отмена" doneText="Выбрать" formControlName="data_poverkend"></ion-datetime>
+            </ion-item>
+        </ion-list>
+    </form>
+    <ion-button class="register" type="submit" expand="block" (click)="save()">Добавить</ion-button>
 </ion-content>
